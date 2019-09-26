@@ -4,7 +4,10 @@ using System.Text;
 
 namespace quotable.core
 {
-    interface RandomQuoteProvider
+    /// <summary>
+    /// Interface for all future implementations of the Random quote providers.
+    /// </summary>
+    public interface RandomQuoteProvider
     {
         IEnumerable<string> FindQuotes(long val);
     }
