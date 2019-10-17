@@ -28,6 +28,7 @@ namespace quotable.console
             {
                 Console.WriteLine(i);
             }
+            Console.WriteLine("End of Program");
         }
     }
 }

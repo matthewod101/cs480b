@@ -10,7 +10,8 @@ namespace quotable.core
     /// </summary>
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
-        private IEnumerable<string> s;
+        readonly List<string> lines = new List<string>();
+        private readonly IEnumerable<string> s;
         /// <summary>
         /// Receives an IEnumerable<string> value containing a list of quotes
         /// </summary>
@@ -18,7 +19,10 @@ namespace quotable.core
         public DefaultRandomQuoteGenerator(IEnumerable<string> s)
         {
             this.s = s;
-            
+            foreach (string l in this.s)
+            {
+                lines.Add(l);
+            }
         }
 
         /// <summary>
@@ -30,22 +34,38 @@ namespace quotable.core
         public IEnumerable<string> FindQuotes(long val)
         {
             string[] home;
-            List<string> lines = new List<string>();
-            foreach (string l in s)
-            {
-                lines.Add(l);
-            }
             if (val <= lines.Count)
             {
                 home = new string[val];
             }
-            else { home = new string[3]; }
+            else { home = new string[lines.Count]; }
             for (int i = 0; i < home.Length; i++)
             {
                 Random r = new Random();
                 home[i] = lines[r.Next(0, lines.Count)];
             }
             return home;
+        }
+
+        public string FindQuoteById(int id)
+        {
+            string quote = "";
+            int squigly = lines[id].IndexOf("~");
+            quote = lines[id].Substring(0, squigly-1);
+            return quote;
+        }
+
+        public string FindAuthorById(int id)
+        {
+            string author = "";
+            int squigly = lines[id].IndexOf("~");
+            author = lines[id].Substring(squigly+1);
+            return author;
+        }
+
+        public IEnumerable<string> getLines()
+        {
+            return lines;
         }
     }
 }
