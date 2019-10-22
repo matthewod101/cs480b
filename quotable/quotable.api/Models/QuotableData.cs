@@ -10,6 +10,5 @@ namespace quotable.api.Models
         public long id { get; set; }
         public string quote { get; set; }
         public string author { get; set; }
-
     }
 }

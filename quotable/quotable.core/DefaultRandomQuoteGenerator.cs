@@ -47,6 +47,11 @@ namespace quotable.core
             return home;
         }
 
+        /// <summary>
+        /// Takes an id parameter to determine which quote in the list should be pulled.
+        /// </summary>
+        /// <param name="id">Determines which quote should be provided</param>
+        /// <returns>Desired quote</returns>
         public string FindQuoteById(int id)
         {
             string quote = "";
@@ -55,6 +60,11 @@ namespace quotable.core
             return quote;
         }
 
+        /// <summary>
+        /// Takes an id parameter to determine which author in the list is pulled from the quote.
+        /// </summary>
+        /// <param name="id">Id of the author of the quote</param>
+        /// <returns>Desired author of the quote.</returns>
         public string FindAuthorById(int id)
         {
             string author = "";
@@ -63,6 +73,10 @@ namespace quotable.core
             return author;
         }
 
+        /// <summary>
+        /// Getter for the list of quotes for the generator.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<string> getLines()
         {
             return lines;

@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "quotable.core", "quotable.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "quotable.api", "quotable.api\quotable.api.csproj", "{20D26783-736D-4A92-91CB-4EB8994142B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quotable.api.tests", "quotable.api.tests\quotable.api.tests.csproj", "{370381E4-1437-4BD5-8477-B47F4B8F06C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "quotable.api.tests", "quotable.api.tests\quotable.api.tests.csproj", "{370381E4-1437-4BD5-8477-B47F4B8F06C1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{20D26783-736D-4A92-91CB-4EB8994142B9} = {20D26783-736D-4A92-91CB-4EB8994142B9}
 		{912EBAED-807D-4C50-88F7-734BD70BE38F} = {912EBAED-807D-4C50-88F7-734BD70BE38F}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quotable.core.tests", "quotable.core.tests\quotable.core.tests.csproj", "{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{370381E4-1437-4BD5-8477-B47F4B8F06C1}.Release|x64.Build.0 = Release|Any CPU
 		{370381E4-1437-4BD5-8477-B47F4B8F06C1}.Release|x86.ActiveCfg = Release|Any CPU
 		{370381E4-1437-4BD5-8477-B47F4B8F06C1}.Release|x86.Build.0 = Release|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Debug|x64.Build.0 = Debug|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Debug|x86.Build.0 = Debug|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Release|x64.ActiveCfg = Release|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Release|x64.Build.0 = Release|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Release|x86.ActiveCfg = Release|Any CPU
+		{45F60FD4-A866-4BBC-A2E3-6A27AE7DFB80}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

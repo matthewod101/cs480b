@@ -8,17 +8,29 @@ using quotable.api.Models;
 //Resources found here.
 namespace quotable.api.Controllers
 {
+    /// <summary>
+    /// Api controllers that allows the methods to be called through .NET core.
+    /// Includes the quote provider from a given Id and the provider of the entire list of quotes.
+    /// </summary>
     [Route("api/quotes")]
     [ApiController]
     public class QuotesController : ControllerBase
     {
         private DefaultRandomQuoteGenerator generator { get; }
 
+        /// <summary>
+        /// Constructor for the controller object.
+        /// </summary>
+        /// <param name="gen"></param>
         public QuotesController(DefaultRandomQuoteGenerator gen)
         {
             generator = gen;
         }
 
+        /// <summary>
+        /// .Net GET for the entire list of quotes.
+        /// </summary>
+        /// <returns>List of all the quotes.</returns>
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<QuotableData>> Get()
@@ -37,6 +49,11 @@ namespace quotable.api.Controllers
             return results;
         }
 
+        /// <summary>
+        /// .net Get for a single quote determined by the given Id.
+        /// </summary>
+        /// <param name="id">Given Id that selects the quote being searched for.</param>
+        /// <returns>Quote and author of the quote of the given Id.</returns>
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<QuotableData> Get(int id)
