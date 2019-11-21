@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.console</name>
+    </assembly>
+    <members>
+        <member name="T:quotable.console.Program">
+            <summary>
+            Homework three Creates a database with all of the quotes and respective authors that allows them to be retrieved.
+            </summary>
+        </member>
+        <member name="M:quotable.console.Program.PopulateDatabase(quotable.core.QuotableContext)">
+            <summary>
+            Main class the runs both parts of the program.  
+            The SimpleRandomQuoteProvider is run first after the long value is typed into the console.
+            Afterwards, an IEnumerable reads the quotes.txt file, and the DefaultRandomQuoteGenerator is run.
+            </summary>
+        </member>
+    </members>
+</doc>

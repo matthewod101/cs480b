@@ -11,7 +11,7 @@ namespace quotable.core
     public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         /// <summary>
-        /// Retuns an IEnumerable<string> value that contains the randomly selected quotes to be read into the console.
+        /// Retuns an IEnumerable value that contains the randomly selected quotes to be read into the console.
         /// Contains the hardcoded quotes in the string array object test.
         /// </summary>
         /// <param name="val"></param>
