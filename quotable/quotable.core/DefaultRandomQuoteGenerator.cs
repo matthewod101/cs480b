@@ -6,16 +6,16 @@ using System.Linq;
 namespace quotable.core
 {
     /// <summary>
-    /// Class that selects a single random quote from a passed in IEnumerable<string>.
+    /// Class that selects a single random quote from a passed in IEnumerable.
     /// </summary>
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
         readonly List<string> lines = new List<string>();
         private readonly IEnumerable<string> s;
         /// <summary>
-        /// Receives an IEnumerable<string> value containing a list of quotes
+        /// Receives an IEnumerable value containing a list of quotes
         /// </summary>
-        /// <param name="s">IEnumerable<string> that contains a collection of quotes.</param>
+        /// <param name="s">IEnumerable that contains a collection of quotes.</param>
         public DefaultRandomQuoteGenerator(IEnumerable<string> s)
         {
             this.s = s;
@@ -56,7 +56,7 @@ namespace quotable.core
         {
             string quote = "";
             int squigly = lines[id].IndexOf("~");
-            quote = lines[id].Substring(0, squigly-1);
+            quote = lines[id].Substring(0, squigly - 1);
             return quote;
         }
 
@@ -69,9 +69,39 @@ namespace quotable.core
         {
             string author = "";
             int squigly = lines[id].IndexOf("~");
-            author = lines[id].Substring(squigly+1);
+            author = lines[id].Substring(squigly + 1);
             return author;
         }
+
+        /// <summary>
+        /// Determines the first name of the author.
+        /// </summary>
+        /// <param name="id">Selected id of the author</param>
+        /// <returns></returns>
+        public string FindAuthorFirstName(int id)
+        {
+            string authorFName = "";
+            string temp = FindAuthorById(id);
+            int space = temp.IndexOf(" ");
+            authorFName = temp.Substring(0, space);
+            return authorFName;
+        }
+
+        /// <summary>
+        /// Determines the first name of the author.
+        /// </summary>
+        /// <param name="id">Selected id of the author</param>
+        /// <returns></returns>
+        public string FindAuthorLastName(int id)
+        {
+            string authorLName = "";
+            string temp = FindAuthorById(id);
+            int space = temp.LastIndexOf(" ");
+            authorLName = temp.Substring(space + 1);
+            return authorLName;
+        }
+
+
 
         /// <summary>
         /// Getter for the list of quotes for the generator.

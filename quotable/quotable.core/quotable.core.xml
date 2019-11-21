@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.core</name>
+    </assembly>
+    <members>
+        <member name="T:quotable.core.Author">
+            <summary>
+            Model for the author of the quote
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.id">
+            <summary>
+            Id of the author
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.FirstName">
+            <summary>
+            Author's first name
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.LastName">
+            <summary>
+            Author's last name
+            </summary>
+        </member>
+        <member name="P:quotable.core.Author.QuoteAuthor">
+            <summary>
+            Established relation between author and quote
+            </summary>
+        </member>
+        <member name="T:quotable.core.DefaultRandomQuoteGenerator">
+            <summary>
+            Class that selects a single random quote from a passed in IEnumerable.
+            </summary>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Receives an IEnumerable value containing a list of quotes
+            </summary>
+            <param name="s">IEnumerable that contains a collection of quotes.</param>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.FindQuotes(System.Int64)">
+            <summary>
+            Implements the RandomQuoteProvider interface.   Takes the list of quotes and passes it into the lines List object.
+            The class then selects random quotes and prints it onto the console.
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.FindQuoteById(System.Int32)">
+            <summary>
+            Takes an id parameter to determine which quote in the list should be pulled.
+            </summary>
+            <param name="id">Determines which quote should be provided</param>
+            <returns>Desired quote</returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.FindAuthorById(System.Int32)">
+            <summary>
+            Takes an id parameter to determine which author in the list is pulled from the quote.
+            </summary>
+            <param name="id">Id of the author of the quote</param>
+            <returns>Desired author of the quote.</returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.FindAuthorFirstName(System.Int32)">
+            <summary>
+            Determines the first name of the author.
+            </summary>
+            <param name="id">Selected id of the author</param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.FindAuthorLastName(System.Int32)">
+            <summary>
+            Determines the first name of the author.
+            </summary>
+            <param name="id">Selected id of the author</param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.getLines">
+            <summary>
+            Getter for the list of quotes for the generator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:quotable.core.QuotableContext">
+            <summary>
+            The context of the database that will allow access to quotes and their authors
+            </summary>
+        </member>
+        <member name="M:quotable.core.QuotableContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuotableContext.quotes">
+            <summary>
+            Used to access quotes in the database.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuotableContext.Authors">
+            <summary>
+            Used to access authors in the database.
+            </summary>
+        </member>
+        <member name="M:quotable.core.QuotableContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritquote/>
+        </member>
+        <member name="T:quotable.core.Quote">
+            <summary>
+            Model of the quote object
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quote.id">
+            <summary>
+            Id of the quote
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quote.quote">
+            <summary>
+            The quote
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quote.Authors">
+            <summary>
+            The list of authors.
+            </summary>
+        </member>
+        <member name="P:quotable.core.Quote.QuoteAuthor">
+            <summary>
+            Established relation between author and quote
+            </summary>
+        </member>
+        <member name="T:quotable.core.QuoteAuthor">
+            <summary>
+            Created relation between the quote and its author
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.QuoteId">
+            <summary>
+            The ID of the quote related to the author.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.quote">
+            <summary>
+            The quote related to the author.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.AuthorId">
+            <summary>
+            The ID of the author related to the quote.
+            </summary>
+        </member>
+        <member name="P:quotable.core.QuoteAuthor.Author">
+            <summary>
+            The author related to the quote.
+            </summary>
+        </member>
+        <member name="T:quotable.core.RandomQuoteProvider">
+            <summary>
+            Interface for all future implementations of the Random quote providers.
+            </summary>
+        </member>
+        <member name="M:quotable.core.RandomQuoteProvider.FindQuotes(System.Int64)">
+            <summary>
+            Abstract method for all future quoteproviders
+            </summary>
+            <param name="val">Id of quote</param>
+            <returns></returns>
+        </member>
+        <member name="T:quotable.core.SimpleRandomQuoteProvider">
+            <summary>
+            Provides up to three randomly selected quotes from the hardcoded list.  
+            Number of quotes is determined by the value typed into the console.
+            </summary>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.FindQuotes(System.Int64)">
+            <summary>
+            Retuns an IEnumerable value that contains the randomly selected quotes to be read into the console.
+            Contains the hardcoded quotes in the string array object test.
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
