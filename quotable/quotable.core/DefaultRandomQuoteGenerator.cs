@@ -83,7 +83,7 @@ namespace quotable.core
             string authorFName = "";
             string temp = FindAuthorById(id);
             int space = temp.IndexOf(" ");
-            authorFName = temp.Substring(0, space);
+            authorFName = temp.Substring(0, space+1);
             return authorFName;
         }
 

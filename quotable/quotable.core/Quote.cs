@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -23,6 +24,7 @@ namespace quotable.core
         /// <summary>
         /// The list of authors.
         /// </summary>
+        [NotMapped]
         public IEnumerable<Author> Authors => from x in QuoteAuthor select x.Author;
 
         /// <summary>
