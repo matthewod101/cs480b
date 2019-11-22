@@ -12,7 +12,7 @@ namespace quotable.api.Controllers
     /// Api controllers that allows the methods to be called through .NET core.
     /// Includes the quote provider from a given Id and the provider of the entire list of quotes.
     /// </summary>
-    [Route("api/quotes")]
+    [Route("api/hw2quotes")]
     [ApiController]
     public class QuotesController : ControllerBase
     {

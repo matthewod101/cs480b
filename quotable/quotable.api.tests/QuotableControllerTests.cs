@@ -72,7 +72,7 @@ namespace Tests
             var actual1 = q.Get();
             var finalCount = 0;
             var count = 0;
-            foreach(string l in lines)
+            foreach (string l in lines)
             {
                 if (actual1.Value.quote == d.FindQuoteById(count) && actual1.Value.author == d.FindAuthorById(count))
                 {

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\quotable.console\quotable.console.csproj" />
     <ProjectReference Include="..\quotable.core\quotable.core.csproj" />
   </ItemGroup>
 

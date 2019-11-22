@@ -55,10 +55,10 @@ namespace quotable.console
         }
 
         /// <summary>
-        /// Main class the runs both parts of the program.  
-        /// The SimpleRandomQuoteProvider is run first after the long value is typed into the console.
-        /// Afterwards, an IEnumerable reads the quotes.txt file, and the DefaultRandomQuoteGenerator is run.
+        /// Populates the database with all the quotes from the .txt file
         /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         private static async Task PopulateDatabase(QuotableContext c)
         {
             IEnumerable<string> lines = System.IO.File.ReadAllLines(@"..\..\quotes.txt");
@@ -80,6 +80,11 @@ namespace quotable.console
             await c.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Main class the runs both parts of the program.  
+        /// The SimpleRandomQuoteProvider is run first after the long value is typed into the console.
+        /// Afterwards, an IEnumerable reads the quotes.txt file, and the DefaultRandomQuoteGenerator is run.
+        /// </summary>
         private void HW2 ()
         {
             SimpleRandomQuoteProvider s = new SimpleRandomQuoteProvider();
